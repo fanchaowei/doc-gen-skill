@@ -1,6 +1,6 @@
 ---
 name: doc-gen
-description: 智能模块文档生成器 - 分析 Vue 3 + TypeScript 代码模块,生成 AI 优化的结构化文档。支持 6 种模块类型(综合模块、Vue 组件、Pinia Store、Composables、工具函数、视图页面),自动识别模块边界,生成结构化文档并更新 CLAUDE.md 索引。
+description: 智能模块文档生成器 - 分析 Vue 3 + TypeScript 代码模块,生成 AI 优化的结构化文档。支持 6 种模块类型(综合模块、Vue 组件、Pinia Store、Composables、工具函数、视图页面),自动识别模块边界,生成结构化文档并更新 AGENTS.md 索引。
 metadata:
   author: 范超威
   version: "1.0.0"
@@ -408,11 +408,11 @@ const templateMap = {
 
 ---
 
-### 7. 更新 CLAUDE.md 索引
+### 7. 更新 AGENTS.md 索引
 
 **步骤**:
 
-1. **读取 CLAUDE.md**
+1. **读取 AGENTS.md**
    - 使用 Read 工具读取全文
 
 2. **定位索引章节**
@@ -464,7 +464,7 @@ const templateMap = {
      - 如果分类不存在,创建新分类
    ```
 
-6. **写回 CLAUDE.md**
+6. **写回 AGENTS.md**
    - 使用 Edit 工具更新文件
 
 ---
@@ -477,7 +477,7 @@ const templateMap = {
 ✅ 文档生成完成!
 
 📄 **生成的文档**: claudedocs/modules/{ModuleName}.md
-📑 **更新的索引**: CLAUDE.md
+📑 **更新的索引**: AGENTS.md
 
 📊 **模块信息**:
 - 类型: {模块类型}
@@ -512,7 +512,7 @@ const templateMap = {
 - 如果整个章节为空,移除该章节而非留下空章节
 
 ### 4. 索引更新安全性
-- 更新 CLAUDE.md 前,先备份(内存中保存原始内容)
+- 更新 AGENTS.md 前,先备份(内存中保存原始内容)
 - 更新失败时,恢复原始内容并提示用户手动更新
 
 ### 5. 用户交互
@@ -547,10 +547,10 @@ const templateMap = {
 建议: 请检查文件权限或文件是否存在
 ```
 
-### 错误 4: CLAUDE.md 更新失败
+### 错误 4: AGENTS.md 更新失败
 ```
-提示: ❌ 错误: 无法更新 CLAUDE.md 索引
-建议: 请手动添加以下索引条目到 CLAUDE.md:
+提示: ❌ 错误: 无法更新 AGENTS.md 索引
+建议: 请手动添加以下索引条目到 AGENTS.md:
 {显示索引条目}
 ```
 
@@ -572,7 +572,7 @@ const templateMap = {
 4. 选择模板: `complex-module.md`
 5. 深度分析代码,提取所有信息
 6. 生成 `claudedocs/modules/TheMap.md`
-7. 在 CLAUDE.md 的"### 共享组件模块"下添加索引
+7. 在 AGENTS.md 的"### 共享组件模块"下添加索引
 
 ### 示例 2: 简单组件
 
@@ -588,7 +588,7 @@ const templateMap = {
 4. 选择模板: `component-simple.md`
 5. 提取 Props、Events、核心功能
 6. 生成 `claudedocs/modules/DynamicForm.md`
-7. 在 CLAUDE.md 的"### 共享组件模块"下添加索引
+7. 在 AGENTS.md 的"### 共享组件模块"下添加索引
 
 ### 示例 3: Pinia Store
 
@@ -607,7 +607,7 @@ const templateMap = {
 4. 选择模板: `store-detailed.md`
 5. 提取 State、Getters、Actions、API 集成
 6. 生成 `claudedocs/modules/useTreeStationConfig.md`
-7. 在 CLAUDE.md 的"### 状态管理模块"下添加索引
+7. 在 AGENTS.md 的"### 状态管理模块"下添加索引
 
 ---
 
